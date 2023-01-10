@@ -7,7 +7,12 @@
 NAME	=	printf.a
 
 SRCS	=	src/main.c	\
-		src/dprintf.c
+		src/dprintf.c	\
+		src/main.c	\
+		src/pf_sort.c	\
+		src/print_base10.c	\
+		src/puts_plus.c	\
+		src/strlen.c
 
 OBJS	=	$(SRCS:.c=.o)
 
