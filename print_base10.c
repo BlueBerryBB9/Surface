@@ -53,8 +53,7 @@ int stu_print_base10(int nb)
         nb = nb * -1;
         stu_putchar('-');
         x = x + 1;
-    }
-    if ( nb == 0) {
+    } else if ( nb == 0) {
         write(1, "0\n", 2);
         return(1);
     }

@@ -7,17 +7,7 @@
  */
 
 #include <unistd.h>
-
-unsigned int stu_strlen(const char *str)
-{
-    int i;
-
-    i = 0;
-    while (str [i] != '\0') {
-        i = i + 1;
-    }
-    return (i);
-}
+#include "printf.h"
 
 int puts_plus(int channel, const char *str, int rt)
 {
