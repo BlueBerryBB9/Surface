@@ -21,8 +21,8 @@ int stu_dprintf(int fd, const char *pattern, ...)
             pf_sort(fd, &la, pattern[n]);
         } else {
             stu_putchar(fd, pattern[n]);
-            n = n + 1;
         }
+        n = n + 1;
     }
     va_end(la);
     return (n);

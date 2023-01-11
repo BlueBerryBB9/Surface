@@ -25,23 +25,28 @@ static int stu_nb_len(int nb)
 static int hexa_pf(int fd, void *c)
 {
     int i;
-    int str;
+    int addr;
     char *stck;
 
     i = 0;
-    str = (int)c;
-    stck = malloc(sizeof(char) * (stu_nb_len(str) + 1));
-    while (str >= 0) {
-        if (str <= 16) {
-            stck[i] = hexa[str];
-        } else if (str > 16) {
-            stck[i] = hexa[str % 16];
-            str = str / 16;
+    if (c == NULL) {
+        i = i + puts_plus(1, "(null)", 0);
+        return (i);
+    }
+    puts_plus(1, "0x", 0);
+    addr = (int)c;
+    stck = malloc(sizeof(char) * (stu_nb_len(addr) + 1));
+    if (addr < 16) {
+        stck[i] = hexa[addr];
+    } else {
+        while (addr > 0) {
+            stck[i] = hexa[addr % 16];
+            addr = addr / 16;
             i = i + 1;
         }
     }
-    rev(stck);
-    puts_plus(fd, stck, 0);
+    stck[i] = '\0';
+    puts_plus(fd, rev(stck), 0);
     return (i);
 }
 
@@ -51,10 +56,10 @@ int pf_sort(int fd, va_list *la, char c)
 
     n = 0;
     if (c == '%' || c == 'c') {
-        if (c == '%') {
-            n = write(fd, "%", 1);
-        } else {
+        if (c == 'c') {
             n = stu_putchar(fd, va_arg(*la, int));
+        } else {
+            n = write(fd, "%", 1);
         }
     } else if (c == 's' || c == 'p') {
         if (c == 's') {

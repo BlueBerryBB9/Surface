@@ -1,3 +1,4 @@
+
 # E89 Pedagogical & Technical Lab
 # project:     rev
 # created on:  2023-01-05 - 09:34 +0100
@@ -12,7 +13,9 @@ SRCS	=	src/main.c	\
 		src/pf_sort.c	\
 		src/print_base10.c	\
 		src/puts_plus.c	\
-		src/strlen.c
+		src/strlen.c	\
+		src/rev.c	\
+		src/putchar.c	\
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -35,7 +38,7 @@ endif
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) -o $(NAME)
+	ar rc $(NAME) $(OBJS)
 
 test:
 	$(CC) $(CFLAGS) src/main.c printf.a -o printf

@@ -7,11 +7,7 @@
  */
 
 #include <unistd.h>
-
-static void stu_putchar(char c)
-{
-    write (1, &c, 1);
-}
+#include "printf.h"
 
 static int stu_nb_len(int nb)
 {
