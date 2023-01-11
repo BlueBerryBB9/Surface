@@ -64,6 +64,7 @@ clean:
 
 fclean: clean
 	@$(RM) $(NAME)
+	rm printf
 
 re: fclean all
 
