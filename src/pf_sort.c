@@ -50,7 +50,7 @@ static int hexa_pf(int fd, void *c)
     return (i);
 }
 
-int pf_sort(int fd, va_list *la, char c)
+int pf_sort(int fd, va_list *la, char c)//, int *n, const char *pattern)
 {
     int n;
 
@@ -59,7 +59,7 @@ int pf_sort(int fd, va_list *la, char c)
         if (c == 'c') {
             n = stu_putchar(fd, va_arg(*la, int));
         } else {
-            n = write(fd, "%", 1);
+            write(fd, "%", 1);
         }
     } else if (c == 's' || c == 'p') {
         if (c == 's') {
@@ -68,7 +68,6 @@ int pf_sort(int fd, va_list *la, char c)
             n = hexa_pf(fd, va_arg(*la, void *));
         }
     } else if (c == 'd'){
-        bourrag(int fd, va_arg(*la, int), char c,)
         n = stu_print_base10(fd, va_arg(*la, int));
     }
     return (n);
