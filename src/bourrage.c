@@ -6,7 +6,13 @@
  * description: bourrage
  */
 
-int bourrage(int fd, int *n, const char *pattern)
+#include "printf.h"
+
+int bourrage(int fd,int arg, int *n, const char *pattern)
 {
-    
+    printf("arg : %d\n", arg);
+    printf("fd : %d\n", fd);
+    printf("n : %d\n", *n);
+    printf("pattern : %s\n", pattern);
+    return(0);
 }

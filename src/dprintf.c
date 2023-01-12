@@ -18,7 +18,7 @@ int stu_dprintf(int fd, const char *pattern, ...)
     while (pattern[n] != '\0') {
         if (pattern[n] == '%') {
             n = n + 1;
-            pf_sort(fd, &la, pattern[n]);
+            pf_sort(fd, &la, pattern[n], &n, pattern);
         } else {
             stu_putchar(fd, pattern[n]);
         }

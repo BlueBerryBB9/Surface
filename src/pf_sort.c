@@ -50,25 +50,27 @@ static int hexa_pf(int fd, void *c)
     return (i);
 }
 
-int pf_sort(int fd, va_list *la, char c)//, int *n, const char *pattern)
+int pf_sort(int fd, va_list *la, char c, int *n, const char *pattern)
 {
-    int n;
+    int i;
 
-    n = 0;
+    i = 0;
     if (c == '%' || c == 'c') {
         if (c == 'c') {
-            n = stu_putchar(fd, va_arg(*la, int));
+            i = stu_putchar(fd, va_arg(*la, int));
         } else {
-            write(fd, "%", 1);
+            i = write(fd, "%", 1);
         }
     } else if (c == 's' || c == 'p') {
         if (c == 's') {
-            n = puts_plus(fd, va_arg(*la, char *), 0);
+            i = puts_plus(fd, va_arg(*la, char *), 0);
         } else {
-            n = hexa_pf(fd, va_arg(*la, void *));
+            i = hexa_pf(fd, va_arg(*la, void *));
         }
-    } else if (c == 'd'){
-        n = stu_print_base10(fd, va_arg(*la, int));
+    } else if (c == 'd') {
+        i = stu_print_base10(fd, va_arg(*la, int));
+    } else {
+        i = bourrage(fd, va_arg(*la, int), n, pattern);
     }
-    return (n);
+    return (i);
 }
