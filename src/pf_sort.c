@@ -10,18 +10,6 @@
 
 const char *hexa = "0123456789abcdef";
 
-static int stu_nb_len(int nb)
-{
-    int x;
-
-    x = 0;
-    while (nb != 0) {
-        nb = nb / 10;
-        x = x + 1;
-    }
-    return (x);
-}
-
 static int hexa_pf(int fd, void *c)
 {
     int i;
@@ -69,7 +57,7 @@ int pf_sort(int fd, va_list *la, char c, int *n, const char *pattern)
         }
     } else if (c == 'd') {
         i = stu_print_base10(fd, va_arg(*la, int));
-    } else if (c == '+' || c == ' '(c >= 49 && c <= 57)){
+    } else if (c == '+' || c == ' ' || (c >= '0' && c <= '9')){
         i = bourrage(fd, va_arg(*la, int), n, pattern);
     }
     return (i);

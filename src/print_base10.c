@@ -9,18 +9,6 @@
 #include <unistd.h>
 #include "printf.h"
 
-static int stu_nb_len(int nb)
-{
-    int i;
-
-    i = 0;
-    while (nb != 0) {
-        nb = nb / 10;
-        i = i + 1;
-    }
-    return (i);
-}
-
 static int stu_get_digit(int nb, int index)
 {
     int i;

@@ -16,7 +16,9 @@ SRCS	=	src/main.c	\
 		src/strlen.c	\
 		src/rev.c	\
 		src/putchar.c	\
-		src/bourrage.c
+		src/bourrage.c	\
+		src/nb_len.c	\
+		src/repeat_char.c
 
 OBJS	=	$(SRCS:.c=.o)
 

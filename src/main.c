@@ -19,7 +19,22 @@ int main(void)
      * n = stu_dprintf(1, "%d\n", 12);
      * stu_dprintf(2, "bytes printed %d\n", n);
      */
-    stu_dprintf(1, "%+10d\n", 56);
+    /*
+     * stu_dprintf(1, "%+5d\n", 56);
+     * stu_dprintf(1, "%+ 5d\n", 56);
+     * stu_dprintf(1, "%+05d\n", 56);
+     * stu_dprintf(1, "%+5d\n", -56);
+     * stu_dprintf(1, "%+ 5d\n", -56);
+     * stu_dprintf(1, "%+05d\n", -56);
+     * stu_dprintf(1, "%5d\n", 56);
+     * stu_dprintf(1, "% 5d\n", 56);
+     */
+    stu_dprintf(1, "%05d\n", 56);
+    /*
+     * stu_dprintf(1, "%5d\n", -56);
+     * stu_dprintf(1, "% 5d\n", -56);
+     */
+    stu_dprintf(1, "%05d\n", -56);
     /*
      * str = NULL;
      * stu_dprintf(1, "addr is %p\n", str);
