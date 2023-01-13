@@ -69,7 +69,7 @@ int pf_sort(int fd, va_list *la, char c, int *n, const char *pattern)
         }
     } else if (c == 'd') {
         i = stu_print_base10(fd, va_arg(*la, int));
-    } else {
+    } else if (c == '+' || c == ' '(c >= 49 && c <= 57)){
         i = bourrage(fd, va_arg(*la, int), n, pattern);
     }
     return (i);
