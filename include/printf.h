@@ -1,7 +1,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 #ifndef PRINTF_H
 

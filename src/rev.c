@@ -17,7 +17,7 @@ char *rev(const char *c)
     i = 0;
     r = (stu_strlen(c) - 1);
     res = malloc(sizeof(char) * (stu_strlen(c) + 1));
-    while(r >= 0) {
+    while (r >= 0) {
         res[r] = c[i];
         r = r - 1;
         i = i + 1;

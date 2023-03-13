@@ -8,7 +8,7 @@
 
 #include "printf.h"
 
-int puts_space(int fd, int nbr, int varg, int *signe)
+static int puts_space(int fd, int nbr, int varg, int *signe)
 {
     int nblen;
     int n;
@@ -29,7 +29,7 @@ int puts_space(int fd, int nbr, int varg, int *signe)
     return (n);
 }
 
-int puts_zero(int fd, int nbr, int varg, int *signe)
+static int puts_zero(int fd, int nbr, int varg, int *signe)
 {
     int nblen;
     int n;
@@ -53,7 +53,7 @@ int puts_zero(int fd, int nbr, int varg, int *signe)
     return (n);
 }
 
-int br_signe(int varg, int *n, const char *pattern)
+static int br_signe(int varg, int *n, const char *pattern)
 {
     int signe;
 
