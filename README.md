@@ -4,7 +4,7 @@
 - Used Languages : C -> Graphical with LibLapin
 - Time : 5 weeks
 - Used Softwares : Linux / Emacs
-- Teams size : 2 person
+- Teams size : 2 person (made in collaboration with [nchanti33](https://github.com/Nchanti33))
 
 ## Context
 - During my first year at 89, the goal was to create a model of a landscape surface where altitude can change on each point.
